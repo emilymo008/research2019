@@ -1,0 +1,205 @@
+<head>
+  <title>Emily Mo - Research Presentation May 2019</title>
+   <meta charset="UTF-8">
+  <link rel="stylesheet" href="flowtime.js-master/css/flowtime.css">
+  <link rel="stylesheet" type="text/css" href="presstyle.css">
+  <!--
+  <script type="text/javascript">
+    Flowtime.setDebouncingDelay(300); /** not working, have to actually figure out. also the page down thing isn't working **/
+  </script>
+  -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.js"></script>
+  <script src="graph/graph.js"></script>
+
+  <div id="p5_loading" class="loadingclass"></div>
+
+  <link href="https://fonts.googleapis.com/css?family=Sintony" rel="preload">
+
+</head>
+
+
+
+
+<body>
+
+
+
+  <div class="flowtime">
+    <div class="ft-section">
+
+      <div class="ft-page" style = 'background-color: #ADADAD;'>
+        <h1 style = 'margin: auto; top: 50%; left: 50%; transform: translate(-50%, -50%); position: absolute; text-align: center; color: #FFFFFF;'>
+          Use up and down arrow keys to navigate.
+          <br> <br>
+          (Looks best in fullscreen mode!)
+        </h1>
+      </div>
+
+      <div class="ft-page" style = 'background-color: #FFFFFF;'>
+        <h1 class = 't' style = 'font-weight: bold;'>Assessing the Impact of Exclusive Extreme Response Style on Estimation of the Treatment Effect in Randomized Control Group Designs</h1>
+        <div class = 'names'>
+          Emily Mo
+          <br>
+          Faculty Advisor: Allen Gregg Harbaugh
+          <br>
+          Boston University Mathematics & Statistics
+        </div>
+        <img class = 'likert' src = 'assets/likert_rs.png'>
+      </div>
+
+
+      <div class="ft-page" style = 'background-color: #FFFFFF;'>
+        <h2>Definitions & Concepts</h2>
+        <div style = 'width: 100vw; position: absolute; top: 32%; left: 50%; transform: translate(-50%, -50%);'>
+          <div style = 'width: 65vw; height: 20vh; position: relative; margin: auto; padding: 20px;'>
+            <div class = 'defn' style = 'position: absolute; left: 15%; top: 15%; transform: translate(-50%, -50%);' >Manifest Item</div>
+            <div class = 'defn' style = 'position: absolute; left: 85%; top: 15%; transform: translate(-50%, -50%);'>Latent Variable</div>
+            <div class = 'defn' style = 'position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);'>Treatment effect and its estimation</div>
+            <div class = 'defn' style = 'position: absolute; left: 15%; top: 85%; transform: translate(-50%, -50%);'>Tau cuts</div>
+            <div class = 'defn' style = 'position: absolute; left: 85%; top: 85%; transform: translate(-50%, -50%);'>Response Styles (more on that...)</div>
+          </div>
+        </div>
+
+        <div style = 'width: 100vw; position: absolute; height: 45vh; top: 62%; left: 50%; transform: translate(-50%, -50%); '>
+          <img class = 'flow' src="assets/rsch sample model.png">
+          <img class = 'taucut' src = 'assets/taunorm6.png'>
+        </div>
+      </div>
+
+
+      <div class="ft-page" style = 'background-color: #FFFFFF;'>
+        <h2 class = 't'>What are Response Styles?</h2>
+        <div class = 'txt'>
+          <span style="color: #fe9625;">Different ways of translating one’s true response to a question into one of the options on the Likert scale</span>
+          <br> <br>
+          (For example: Exclusive Extreme, Extreme Avoiding)
+          <br> <br>
+          Response styles can vary according to factors such as education level, personality, and cultural background.
+
+        </div>
+      </div>
+
+      <div class="ft-page" style = 'background-color: #FFFFFF;'>
+        <h2 class = 't'>What are Response Styles?</h2>
+        <img class = 'rs' src = 'assets/rs_def.png'></img>
+      </div>
+
+      <div class="ft-page" style = 'background-color: #FFFFFF;'>
+        <h2 class = 't'>Research Design</h2>
+
+        <div style = 'position: relative; width: 80vw; margin: auto;'>
+
+          <div class = 'txt2' style = 'font-size: 1.5vw; float: left;'>
+            We simulated data to mimic a balanced research design in which data is obtained from responses on a pre- and post-intervention survey, and in which participants are randomly assigned to a treatment or control condition that is administered in between the two surveys.
+            <br> <br>
+            In each simulation, we altered certain survey characteristics, such as the number of people who respond with a response style or the number of questions on the survey, while holding others constant. Our goal was to understand how variations in these survey characteristics impact the treatment effect estimate in the presence of a response style.
+          </div>
+
+          <div style = 'left: 55%; top: 0; width: 40%; height: 100vh; position: relative;'> 
+            <img class = 'design' src="assets/rsch sample model.png"></img> <!-- vh is not actual vh?? -->
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="ft-page" style = 'background-color: #F0F0F0;'>
+        <h2 class = 't'>Why Simulate? <br> (If your data is fake, aren’t your results fake?)</h2>
+
+        <div class = 'txt'>
+          We want to compare the estimated treatment efficacy with the actual treatment efficacy, but we can never know a treatment’s true efficacy in real life. In our simulations, we model a survey design in which we <span style="color: #fe9625;">predetermine the “actual” treatment efficacy</span> and then <span style="color: #fe9625;">obtain a statistical estimate of that efficacy</span> in each simulation using structural equation modeling (SEM) so that we can compare the estimate with reality. That estimate is our response variable.
+
+          <p class="ft-fragment">
+          The survey data we generate is indeed fake. However, we are not interested in the survey data itself, but rather how our chosen experimental variables impact the SEM estimate of the treatment effect. This impact is very much real!
+          </p>
+
+          <p class="ft-fragment">
+          In short, simulations allow us to make comparisons that we can't make in the real world, and also allow us to manipulate our experimental variables of interest in many “parallel realities”, while <span style="color: #fe9625;">controlling the exact variables that we want.</span> This way, we can see where statistical estimation falls short.
+          </p>
+
+
+        </div>
+      </div>
+
+
+      <div class="ft-page" style = 'background-color: #FFFFFF;'>
+        <h2 class = 't'>Our Question</h2>
+        <div class = 'txt' style = 'font-size: 1.3vw;'>
+          We defined a fixed moderate treatment effect size of (0.5), then ran 1000 simulations of each combination of the following experimental variables / controls:
+          <ul>
+            <li>Number of items on pre- and post- surveys fixed at 15</li>
+            <li>Number of respondents fixed at 250</li>
+            <li>Presence of Exclusive Extreme response style (or "percent contamination") varying from:
+              <ul>
+                <li>0% to 39% in intervals of 3% for Likert scale granularities 4 to 7</li>
+                <li>0% to 60% in intervals of 3% for Likert scale granularity 11</li>
+              </ul>
+            </li>
+            <li>Likert scale granularity varying between 4, 5, 6, 7, and 11</li>
+            <li>Skewness of the distributions of Likert-type responses, since a skew is more prominent in real life</li>
+          </ul>
+        </div>
+        <div id = "widget2"></div>
+      </div>
+
+      <div class="ft-page" style = 'background-color: #FFFFFF;'>
+        <h2 class = 't'>Findings: Skewness and Percent Contamination</h2>
+        <div class = 'txt', style = 'z-index: 100'>
+          We found that when predicting treatment effect on data of different skew levels while using Exclusive Extreme percent contamination as a predictor, the negative influence of percent contamination on the treatment effect estimate increased as the absolute value of the skewness increased.
+          <br> <br>
+          In other words, the deeper the skewness, the more likely structural equation modeling methods would suggest that that a treatment was dramatically weaker than it actually was, given increasingly higher presences of Exclusive Extreme response style.
+        </div>
+        <div id = "widget1" style = 'z-index: -1000;'></div>
+        
+        <div class="ft-fragment" style = 'position: absolute; z-index: 0; width: 100vw; height: 100vh; top: 0%; left: 0%; background-color: #FFFFFF;'> <!-- blocks out animation -->
+          <div class = mainimg>
+            <img src = 'assets/main1.png' style = 'position: absolute; left: 25%; transform: translate(-50%, -50%); width: 35vw;'></img>
+            <img src = 'assets/main2.png' style = 'position: absolute; left: 75%; transform: translate(-50%, -50%); width: 35vw;'></img>
+          </div>
+        </div>
+        
+      </div>
+
+
+      <div class="ft-page" style = 'background-color: #FFFFFF;'>
+        <h2 class = 't'>Findings: Skewness and Percent Contamination</h2>
+        <div class = 'txt'>
+          The skewness was not found to have an impact on the standard error of the treatment effect estimate.
+          <br> <br>
+          However, as the presence of the Exclusive Extreme response style increases, the standard error generally increases slightly as well.
+          <br> <br>
+          Thus, as the response style increases in presence, the estimated treatment effect generally deviates in the negative direction from the actual treatment effect, but we also become increasingly uncertain of that estimate.
+
+        </div>
+      </div>
+
+      <div class="ft-page" style = 'background-color: #9fb7f4;'>
+        <h2 class = 't'>What we didn't find...</h2>
+        <div class = 'txt'>
+          Any significant effect of granularity on treatment effect estimate / interaction with percent contamination and skewness levels
+          <br> <br>
+          (Increasing the number of items on the Likert scale used on a survey does not seem to consistently distort the treatment effect estimate or impact how the Exclusive Extreme response style distorts the estimate.)</div>
+      </div>
+
+      <div class="ft-page" style = 'background-color: #ccd632;'>
+        <h2 class = 't'>Next Questions</h2>
+        <div class = 'txt'>
+          To what degree of confidence can we detect the Exclusive Extreme response style in surveys?
+          <br> <br>
+          How can we adjust our margin of error in accordance with the detected level of Exclusive Extreme response style in the survey data?
+        </div>
+      </div>
+
+
+
+
+    </div>
+  </div>
+
+
+
+
+  <script src="flowtime.js-master/js/brav1toolbox.js"></script>
+  <script src="flowtime.js-master/js/flowtime.min.js"></script>
+
+</body>
