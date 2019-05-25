@@ -5,7 +5,7 @@
   body {
     margin: 0 !important; /* to get rid of margin at top / left of page */
     padding: 0 !important;
-    /* font-family: Sintony, sans-serif; */
+    font-family: Sintony, sans-serif;
   }
 
   h1 {
