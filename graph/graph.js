@@ -141,7 +141,7 @@ var g1 = function (p) {
 		var lvl = p.floor(s1.slideup/incr);
 		p.textAlign(p.CENTER);
 		p.text('Skew: ' + shift[lvl], 80, 30);
-		p.noSmooth()
+		p.smooth()
 		p.image(tnorm[lvl], 150, -40, 300, 300);
 		p.image(tdist[lvl], 450, -40, 300, 300);
 
@@ -337,7 +337,7 @@ var g2 = function (p) {
 		var lvl = p.floor(s1.slideup/incr);
 		p.textAlign(p.CENTER);
 		p.text('Skew: ' + shift[lvl], 80, 70);
-		p.noSmooth()
+		p.smooth()
 		p.image(imgs[lvl], 150, 30, 400, 240);
 		p.image(tnorm[lvl], 550, 0, 300, 300); // 150
 		p.image(tdist[lvl], 850, 0, 300, 300); // 450
